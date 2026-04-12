@@ -1,7 +1,7 @@
 package com.example.apphub.matchPointsCounter.domain.scoring.rules
 
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.GameState
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.rules.ScoringRule
+import com.example.apphub.matchPointsCounter.domain.scoring.model.GameState
+import com.example.apphub.matchPointsCounter.domain.scoring.rules.ScoringRule
 
 class TennisRule : ScoringRule<GameState> {
 

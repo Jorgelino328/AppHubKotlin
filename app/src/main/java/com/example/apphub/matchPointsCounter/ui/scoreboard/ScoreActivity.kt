@@ -1,4 +1,4 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard
+package com.example.apphub.matchPointsCounter.ui.scoreboard
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.widget.FrameLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import com.caio.caiocardozo.partidabasquete_kotlin.R
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.GameState
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.SportType
-import com.caio.caiocardozo.partidabasquete_kotlin.ui.modality.PickModality
-import com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard.renderer.*
+import com.example.apphub.R
+import com.example.apphub.matchPointsCounter.domain.scoring.model.GameState
+import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
+import com.example.apphub.matchPointsCounter.ui.modality.PickModality
+import com.example.apphub.matchPointsCounter.ui.scoreboard.renderer.*
 
 class ScoreActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.rules
+package com.example.apphub.matchPointsCounter.domain.scoring.rules
 
 interface ScoringRule<T> {
     fun getInitialState(): T

@@ -1,9 +1,9 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard.renderer
+package com.example.apphub.matchPointsCounter.ui.scoreboard.renderer
 
 import android.view.*
 import android.widget.*
-import com.caio.caiocardozo.partidabasquete_kotlin.R
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.GameState
+import com.example.apphub.R
+import com.example.apphub.matchPointsCounter.domain.scoring.model.GameState
 
 class TennisRenderer(
     private val teamAName: String,

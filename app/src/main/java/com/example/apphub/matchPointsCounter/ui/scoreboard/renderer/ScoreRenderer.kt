@@ -1,4 +1,4 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard.renderer
+package com.example.apphub.matchPointsCounter.ui.scoreboard.renderer
 
 import android.view.View
 import android.view.ViewGroup

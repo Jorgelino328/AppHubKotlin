@@ -1,8 +1,8 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard
+package com.example.apphub.matchPointsCounter.ui.scoreboard
 
 import androidx.lifecycle.*
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.SportType
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.rules.*
+import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
+import com.example.apphub.matchPointsCounter.domain.scoring.rules.*
 
 class ScoreViewModel : ViewModel() {
 

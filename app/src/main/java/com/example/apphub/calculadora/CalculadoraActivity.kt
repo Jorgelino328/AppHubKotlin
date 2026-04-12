@@ -1,9 +1,10 @@
-package com.example.calculadora
+package com.example.apphub.calculadora
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.example.apphub.R
 
 class CalculadoraActivity : AppCompatActivity() {
     private lateinit var tvDisplay: TextView
@@ -11,7 +12,7 @@ class CalculadoraActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_calculadora)
 
         tvDisplay = findViewById(R.id.txtResultado)
 

@@ -1,13 +1,13 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.modality
+package com.example.apphub.matchPointsCounter.ui.modality
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.caio.caiocardozo.partidabasquete_kotlin.R
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.SportType
-import com.caio.caiocardozo.partidabasquete_kotlin.ui.config.ConfigActivity
+import com.example.apphub.R
+import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
+import com.example.apphub.matchPointsCounter.ui.config.ConfigActivity
 
 class PickModality : AppCompatActivity() {
 

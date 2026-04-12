@@ -1,13 +1,13 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.main
+package com.example.apphub.matchPointsCounter.ui.main
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.caio.caiocardozo.partidabasquete_kotlin.R
+import com.example.apphub.R
 
-class MainActivity : AppCompatActivity() {
+class MatchPointsActivity : AppCompatActivity() {
 
     private var pontuacaoTimeA: Int = 0
     private var pontuacaoTimeB: Int = 0
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_match_points)
 
         pTimeA = findViewById(R.id.placarTimeA)
         pTimeB = findViewById(R.id.placarTimeB)

@@ -1,13 +1,13 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.config
+package com.example.apphub.matchPointsCounter.ui.config
 
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
-import com.caio.caiocardozo.partidabasquete_kotlin.R
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.SportType
-import com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard.ScoreActivity
+import com.example.apphub.R
+import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
+import com.example.apphub.matchPointsCounter.ui.scoreboard.ScoreActivity
 
 class ConfigActivity : AppCompatActivity() {
 

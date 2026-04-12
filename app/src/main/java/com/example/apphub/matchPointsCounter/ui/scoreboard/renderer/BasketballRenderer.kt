@@ -1,12 +1,12 @@
-package com.caio.caiocardozo.partidabasquete_kotlin.ui.scoreboard.renderer
+package com.example.apphub.matchPointsCounter.ui.scoreboard.renderer
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
-import com.caio.caiocardozo.partidabasquete_kotlin.R
-import com.caio.caiocardozo.partidabasquete_kotlin.domain.scoring.model.GameState
+import com.example.apphub.R
+import com.example.apphub.matchPointsCounter.domain.scoring.model.GameState
 
 class BasketballRenderer(
     private val teamAName: String,
