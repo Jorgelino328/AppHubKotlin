@@ -25,7 +25,7 @@ class CalculadoraActivity : AppCompatActivity() {
             "(" to R.id.btnOpenParen, ")" to R.id.btnCloseParen, "^" to R.id.btnPower, "π" to R.id.btnPi
         )
         simpleInputs.forEach { (str, id) ->
-            findViewById<Button>(id).setOnClickListener { appendString(str) }
+            findViewById<android.view.View>(id)?.setOnClickListener { appendString(str) }
         }
 
         // Botões de Funções (anexam o parêntese inicial)
@@ -34,13 +34,13 @@ class CalculadoraActivity : AppCompatActivity() {
             "ln(" to R.id.btnLn, "log(" to R.id.btnLog, "√(" to R.id.btnSqrt
         )
         functionInputs.forEach { (str, id) ->
-            findViewById<Button>(id).setOnClickListener { appendString(str) }
+            findViewById<android.view.View>(id)?.setOnClickListener { appendString(str) }
         }
 
         // Ações de Controle
-        findViewById<Button>(R.id.btnIgual).setOnClickListener { calculateResult() }
-        findViewById<Button>(R.id.btnClear).setOnClickListener { clearAll() }
-        findViewById<Button>(R.id.btnBackspace).setOnClickListener { backspace() }
+        findViewById<android.view.View>(R.id.btnIgual)?.setOnClickListener { calculateResult() }
+        findViewById<android.view.View>(R.id.btnClear)?.setOnClickListener { clearAll() }
+        findViewById<android.view.View>(R.id.btnBackspace)?.setOnClickListener { backspace() }
 
         updateDisplay()
     }
