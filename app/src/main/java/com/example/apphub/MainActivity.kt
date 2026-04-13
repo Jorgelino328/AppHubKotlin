@@ -5,8 +5,9 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.apphub.calculadora.CalculadoraActivity
-// 1. Change the import to point to the modality screen
 import com.example.apphub.matchPointsCounter.ui.modality.PickModality
+
+// 1. Change the import to point to the modality screen
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

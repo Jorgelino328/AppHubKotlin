@@ -68,7 +68,6 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:alpha="0.4"
                 android:id="@+id/cardFutebol">
 
                 <ImageView
@@ -125,7 +124,6 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:alpha="0.4"
                 android:id="@+id/cardVoleiDeAreia">
 
                 <ImageView
@@ -182,7 +180,6 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:alpha="0.4"
                 android:id="@+id/cardTenisDeMesa">
 
                 <ImageView
@@ -211,20 +208,19 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:alpha="0.4"
-                android:id="@+id/cardSinuca">
+                android:id="@+id/cardRugby">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Sinuca"
-                    android:src="@drawable/ic_pool" />
+                    android:contentDescription="Rugby"
+                    android:src="@drawable/ic_rugby" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Sinuca" />
+                    android:text="Rugby" />
 
             </LinearLayout>
 
@@ -240,7 +236,6 @@
                 android:padding="16dp"
                 android:clickable="true"
                 android:focusable="true"
-                android:alpha="0.4"
                 android:id="@+id/cardLivre">
 
                 <ImageView

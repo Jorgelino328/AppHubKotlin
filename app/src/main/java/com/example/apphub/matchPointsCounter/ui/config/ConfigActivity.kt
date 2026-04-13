@@ -28,7 +28,12 @@ class ConfigActivity : AppCompatActivity() {
             val sport = when (esporteString?.uppercase()) {
                 "BASKETBALL" -> SportType.BASKETBALL
                 "VOLLEYBALL" -> SportType.VOLLEYBALL
+                "BEACH_VOLLEYBALL" -> SportType.BEACH_VOLLEYBALL
                 "TENNIS" -> SportType.TENNIS
+                "SOCCER" -> SportType.SOCCER
+                "TABLE_TENNIS" -> SportType.TABLE_TENNIS
+                "RUGBY" -> SportType.RUGBY
+                "CUSTOM" -> SportType.CUSTOM
                 else -> SportType.BASKETBALL
             }
 

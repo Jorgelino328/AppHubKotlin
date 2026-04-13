@@ -11,7 +11,11 @@ object ScoringRules {
         return when (sport) {
             SportType.BASKETBALL -> BasketballRule()
             SportType.VOLLEYBALL -> VolleyballRule()
+            SportType.BEACH_VOLLEYBALL -> BeachVolleyballRule()
+            SportType.SOCCER -> SoccerRule()
             SportType.TENNIS -> TennisRule()
+            SportType.TABLE_TENNIS -> TableTennisRule()
+            SportType.RUGBY -> RugbyRule()
 
             else -> BasketballRule()
         }

@@ -81,7 +81,28 @@ class ScoreActivity : AppCompatActivity() {
                 viewModel.addPoints(team, points)
             } as ScoreRenderer<Any>
 
+            SportType.RUGBY -> RugbyRenderer(
+                teamAName,
+                teamBName
+            ) { team, points ->
+                viewModel.addPoints(team, points)
+            } as ScoreRenderer<Any>
+
+            SportType.SOCCER -> SoccerRenderer(
+                teamAName,
+                teamBName
+            ) {
+                viewModel.addPoint(it)
+            } as ScoreRenderer<Any>
+
             SportType.VOLLEYBALL -> VolleyballRenderer(
+                teamAName,
+                teamBName
+            ) {
+                viewModel.addPoint(it)
+            } as ScoreRenderer<Any>
+
+            SportType.BEACH_VOLLEYBALL -> BeachVolleyballRenderer(
                 teamAName,
                 teamBName
             ) {
@@ -93,6 +114,20 @@ class ScoreActivity : AppCompatActivity() {
                 teamBName
             ) { team, points ->
                 viewModel.addPoints(team, points)
+            } as ScoreRenderer<Any>
+
+            SportType.TABLE_TENNIS -> TableTennisRenderer(
+                teamAName,
+                teamBName
+            ) {
+                viewModel.addPoint(it)
+            } as ScoreRenderer<Any>
+
+            SportType.CUSTOM -> CustomRenderer(
+                teamAName,
+                teamBName
+            ) {
+                viewModel.addPoint(it)
             } as ScoreRenderer<Any>
 
             else -> BasketballRenderer(

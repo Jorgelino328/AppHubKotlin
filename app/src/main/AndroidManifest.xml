@@ -26,8 +26,8 @@
         <activity android:name=".calculadora.CalculadoraActivity" />
 
         <activity android:name=".matchPointsCounter.ui.main.MatchPointsActivity" />
-        <activity android:name=".matchPointsCounter.ui.config.ConfigActivity" />
         <activity android:name=".matchPointsCounter.ui.modality.PickModality" />
+        <activity android:name=".matchPointsCounter.ui.config.ConfigActivity" />
         <activity android:name=".matchPointsCounter.ui.scoreboard.ScoreActivity" />
 
     </application>

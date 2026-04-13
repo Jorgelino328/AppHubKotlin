@@ -7,6 +7,6 @@ enum class SportType {
     SOCCER,
     BEACH_VOLLEYBALL,
     TABLE_TENNIS,
-    BILLIARDS,
+    RUGBY,
     CUSTOM
 }

@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timeA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time A"
+            android:gravity="center"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/scoreA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:gravity="center"
+            android:textSize="54sp"/>
+
+        <Button
+            android:id="@+id/btn5A"
+            android:text="+5 PONTOS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+        <Button android:id="@+id/btn3A" android:text="+3 PONTOS" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/btn2A" android:text="+2 PONTOS" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/timeB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time B"
+            android:gravity="center"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/scoreB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:gravity="center"
+            android:textSize="54sp"/>
+
+        <Button android:id="@+id/btn5B" android:text="+5 PONTOS" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/btn3B" android:text="+3 PONTOS" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+        <Button android:id="@+id/btn2B" android:text="+2 PONTOS" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</LinearLayout>
