@@ -1,6 +1,7 @@
 package com.example.apphub.matchPointsCounter.ui.modality
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,10 @@ class PickModality : AppCompatActivity() {
 //        setupComingSoon(R.id.cardTenisDeMesa)
 //        setupComingSoon(R.id.cardRugby)
 //        setupComingSoon(R.id.cardLivre)
+
+        findViewById<Button>(R.id.btnVoltar).setOnClickListener {
+            finish()
+        }
 
         findViewById<LinearLayout>(R.id.cardFutebol).setOnClickListener {
             navegar(SportType.SOCCER)
