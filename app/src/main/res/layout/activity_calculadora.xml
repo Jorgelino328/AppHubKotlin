@@ -29,7 +29,7 @@
         android:alignmentMode="alignMargins"
         android:useDefaultMargins="true"
         app:layout_constraintTop_toBottomOf="@id/txtResultado"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnVoltar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -92,4 +92,16 @@
         <com.google.android.material.button.MaterialButton android:id="@+id/btnPi" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="π" android:textSize="24sp" app:cornerRadius="16dp"/>
         <com.google.android.material.button.MaterialButton android:id="@+id/btnIgual" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="=" android:textSize="24sp" app:cornerRadius="16dp"/>
     </GridLayout>
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ir para o hub"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@android:color/white"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

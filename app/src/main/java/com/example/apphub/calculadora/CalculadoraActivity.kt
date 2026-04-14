@@ -11,8 +11,13 @@ class CalculadoraActivity : AppCompatActivity() {
     private var currentInput: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calculadora)
+
+        findViewById<Button>(R.id.btnVoltar).setOnClickListener {
+            finish()
+        }
 
         tvDisplay = findViewById(R.id.txtResultado)
 
