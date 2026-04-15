@@ -15,7 +15,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.AppHub">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +22,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".shoppingList.ListHubActivity" />
+        <activity android:name=".shoppingList.ShoppingListActivity" />
         <activity android:name=".calculadora.CalculadoraActivity" />
-
         <activity android:name=".matchPointsCounter.ui.main.MatchPointsActivity" />
         <activity android:name=".matchPointsCounter.ui.modality.PickModality" />
         <activity android:name=".matchPointsCounter.ui.config.ConfigActivity" />

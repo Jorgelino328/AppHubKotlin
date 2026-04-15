@@ -6,8 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.apphub.calculadora.CalculadoraActivity
 import com.example.apphub.matchPointsCounter.ui.modality.PickModality
-
-// 1. Change the import to point to the modality screen
+import com.example.apphub.shoppingList.ListHubActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,6 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val btnCalculadora = findViewById<Button>(R.id.btnCalculadora)
         val btnContador = findViewById<Button>(R.id.btnContador)
+        val btnListaCompras = findViewById<Button>(R.id.btnListaCompras)
 
         btnCalculadora.setOnClickListener {
             val intent = Intent(this, CalculadoraActivity::class.java)
@@ -24,6 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         btnContador.setOnClickListener {
             val intent = Intent(this, PickModality::class.java)
+            startActivity(intent)
+        }
+
+        btnListaCompras.setOnClickListener {
+            val intent = Intent(this, ListHubActivity::class.java)
             startActivity(intent)
         }
     }
