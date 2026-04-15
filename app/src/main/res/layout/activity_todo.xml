@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minhas Tarefas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/editTask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Nova tarefa..."
+            android:textColorHint="@color/purple_200" />
+
+        <Button
+            android:id="@+id/btnAddTodo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:backgroundTint="@color/purple_500"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtEmptyTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nenhuma tarefa por enquanto!"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/purple_500"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listTodo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="@color/purple_200"
+        android:dividerHeight="1dp"/>
+
+    <Button
+        android:id="@+id/btnVoltarTodo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/purple_700"
+        android:textColor="@color/white" />
+</LinearLayout>

@@ -24,7 +24,7 @@
         </activity>
 
         <activity android:name=".calculadora.CalculadoraActivity" />
-
+        <activity android:name=".todoList.ui.TodoActivity" android:exported="false" />
         <activity android:name=".matchPointsCounter.ui.main.MatchPointsActivity" />
         <activity android:name=".matchPointsCounter.ui.modality.PickModality" />
         <activity android:name=".matchPointsCounter.ui.config.ConfigActivity" />
