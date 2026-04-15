@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.apphub.R
@@ -22,6 +23,8 @@ class ListHubAdapter(
         val editButton: ImageButton = view.findViewById(R.id.btnEdit)
         val saveButton: ImageButton = view.findViewById(R.id.btnSave)
         val deleteButton: ImageButton = view.findViewById(R.id.btnDelete)
+
+        val openIcon: ImageView = view.findViewById(R.id.iconOpenList)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HubViewHolder {
@@ -32,16 +35,18 @@ class ListHubAdapter(
     override fun onBindViewHolder(holder: HubViewHolder, position: Int) {
         val currentList = hubLists[position]
 
+        // Reset default visibilities
         holder.textView.visibility = View.VISIBLE
         holder.editButton.visibility = View.VISIBLE
         holder.editTextBox.visibility = View.GONE
         holder.saveButton.visibility = View.GONE
-
         holder.itemView.findViewById<View>(R.id.checkBoxItem)?.visibility = View.GONE
+
+        holder.openIcon.visibility = View.VISIBLE
 
         holder.textView.text = currentList.name
 
-        holder.textView.setOnClickListener {
+        holder.itemView.setOnClickListener {
             onListClicked(currentList)
         }
 

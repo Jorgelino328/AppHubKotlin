@@ -1,7 +1,9 @@
 package com.example.apphub.shoppingList
 
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -53,6 +55,7 @@ class ShoppingListActivity : AppCompatActivity() {
         val inputNomeItem = findViewById<EditText>(R.id.nomeItem)
         val btnAdd = findViewById<FloatingActionButton>(R.id.btnAdd)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewItens)
+        val btnBack = findViewById<ImageButton>(R.id.btnBack)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
@@ -65,6 +68,12 @@ class ShoppingListActivity : AppCompatActivity() {
                 adapter.notifyItemInserted(shoppingList.size - 1)
                 inputNomeItem.text.clear()
             }
+        }
+
+        btnBack.visibility = View.VISIBLE
+
+        btnBack.setOnClickListener {
+            finish()
         }
     }
 }

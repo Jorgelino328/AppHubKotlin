@@ -22,6 +22,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:elevation="10dp"
+        android:contentDescription="@string/voltar"
+        app:tint="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/textLista"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/nomeItem"
         android:layout_width="0dp"
@@ -44,6 +60,7 @@
         android:contentDescription="@string/add_a_new_item"
         android:src="@android:drawable/ic_input_add"
         app:tint="@color/white"
+        app:fabSize="mini"
         app:maxImageSize="30dp"
         app:backgroundTint="@color/purple_300"
         app:layout_constraintBottom_toBottomOf="@+id/nomeItem"
@@ -63,4 +80,3 @@
         tools:listitem="@layout/novo_item" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-

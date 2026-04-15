@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginBottom="8dp"
     android:background="@android:color/white"
+    android:foreground="?attr/selectableItemBackground"
     android:elevation="2dp"
     android:padding="16dp"
     android:gravity="center_vertical"
@@ -34,10 +34,20 @@
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
-        android:autofillHints="Novo nome do Item"
+        android:autofillHints="Editar nome do item"
         android:inputType="text"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iconOpenList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:src="@android:drawable/ic_media_play"
         android:visibility="gone"
-        tools:ignore="LabelFor" />
+        tools:visibility="visible"
+        app:tint="@android:color/holo_green_dark"
+        android:contentDescription="@string/abrir_lista" />
 
     <ImageButton
         android:id="@+id/btnSave"

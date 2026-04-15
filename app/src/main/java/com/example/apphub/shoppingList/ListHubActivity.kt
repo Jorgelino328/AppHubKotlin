@@ -2,7 +2,9 @@ package com.example.apphub.shoppingList
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -65,6 +67,13 @@ class ListHubActivity : AppCompatActivity() {
                 adapter.notifyItemInserted(masterLists.size - 1)
                 inputNomeItem.text.clear()
             }
+        }
+
+        val btnBack = findViewById<ImageButton>(R.id.btnBack)
+        btnBack.visibility = View.VISIBLE
+
+        btnBack.setOnClickListener {
+            finish()
         }
     }
 }

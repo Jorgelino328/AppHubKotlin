@@ -11,4 +11,6 @@
     <string name="deletar_item">Deletar item</string>
     <string name="editar_item">Editar item</string>
     <string name="salvar_item">Salvar item</string>
+    <string name="voltar">Voltar</string>
+    <string name="abrir_lista">Abrir Lista</string>
 </resources>
