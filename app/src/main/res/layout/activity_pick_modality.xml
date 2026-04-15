@@ -9,7 +9,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintBottom_toTopOf="@id/btnHistory"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -17,7 +17,6 @@
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="0dp"
             android:gravity="center"
             android:padding="16dp"
             android:text="Escolha a modalidade"
@@ -34,6 +33,7 @@
             android:padding="16dp">
 
             <LinearLayout
+                android:id="@+id/cardBasquete"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -44,24 +44,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardBasquete">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Basquete"
-                    android:src="@drawable/ic_basketball" />
+                    android:src="@drawable/ic_basketball"
+                    android:contentDescription="Basquete"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Basquete" />
-
+                    android:text="Basquete"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardFutebol"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -72,24 +71,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardFutebol">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Futebol"
-                    android:src="@drawable/ic_soccer" />
+                    android:src="@drawable/ic_soccer"
+                    android:contentDescription="Futebol"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Futebol" />
-
+                    android:text="Futebol"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardVolei"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -100,24 +98,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardVolei">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Volei"
-                    android:src="@drawable/ic_volley" />
+                    android:src="@drawable/ic_volley"
+                    android:contentDescription="Vôlei"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Vôlei" />
-
+                    android:text="Vôlei"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardVoleiDeAreia"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -128,24 +125,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardVoleiDeAreia">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="VoleiDeAreia"
-                    android:src="@drawable/ic_beachvolley" />
+                    android:src="@drawable/ic_beachvolley"
+                    android:contentDescription="Vôlei de areia"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Vôlei de areia" />
-
+                    android:text="Vôlei de areia"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardTenis"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -156,24 +152,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardTenis">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Tenis"
-                    android:src="@drawable/ic_tennis" />
+                    android:src="@drawable/ic_tennis"
+                    android:contentDescription="Tênis"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Tênis" />
-
+                    android:text="Tênis"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardTenisDeMesa"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -184,24 +179,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardTenisDeMesa">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Tenis de mesa"
-                    android:src="@drawable/ic_tabletennis" />
+                    android:src="@drawable/ic_tabletennis"
+                    android:contentDescription="Tênis de mesa"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Tênis de mesa" />
-
+                    android:text="Tênis de mesa"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardRugby"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -212,24 +206,23 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardRugby">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Rugby"
-                    android:src="@drawable/ic_rugby" />
+                    android:src="@drawable/ic_rugby"
+                    android:contentDescription="Rugby"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Rugby" />
-
+                    android:text="Rugby"/>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/cardLivre"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_rowWeight="1"
@@ -240,25 +233,36 @@
                 android:orientation="vertical"
                 android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true"
-                android:id="@+id/cardLivre">
+                android:focusable="true">
 
                 <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:contentDescription="Livre"
-                    android:src="@drawable/ic_free" />
+                    android:src="@drawable/ic_free"
+                    android:contentDescription="Livre"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Livre" />
-
+                    android:text="Livre"/>
             </LinearLayout>
 
         </GridLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnHistory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ver histórico"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@android:color/white"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@id/btnVoltar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <Button
         android:id="@+id/btnVoltar"

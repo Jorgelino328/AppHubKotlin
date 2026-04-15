@@ -1,7 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:padding="16dp"
+    android:paddingBottom="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -22,14 +22,18 @@
         android:id="@+id/timeA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Time A" />
+        android:hint="Nome do Time A"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
 
     <EditText
         android:id="@+id/timeB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Nome do Time B"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
 
     <EditText
         android:id="@+id/limitePontos"
@@ -37,12 +41,16 @@
         android:layout_height="wrap_content"
         android:hint="Limite de pontos (opcional)"
         android:inputType="number"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
 
     <Button
         android:id="@+id/btnIniciar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Iniciar Partida"
-        android:layout_marginTop="24dp"/>
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"/>
 </LinearLayout>

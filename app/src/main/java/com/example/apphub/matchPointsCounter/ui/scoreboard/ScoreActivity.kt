@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +13,7 @@ import com.example.apphub.matchPointsCounter.domain.scoring.model.GameState
 import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
 import com.example.apphub.matchPointsCounter.ui.modality.PickModality
 import com.example.apphub.matchPointsCounter.ui.scoreboard.renderer.*
+import com.example.apphub.matchPointsCounter.domain.history.HistoryManager
 
 class ScoreActivity : AppCompatActivity() {
 
@@ -26,6 +28,8 @@ class ScoreActivity : AppCompatActivity() {
     private var teamAName = "Time A"
     private var teamBName = "Time B"
 
+    private lateinit var sport: SportType
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_score)
@@ -39,11 +43,27 @@ class ScoreActivity : AppCompatActivity() {
 
         // 🔥 SPORT
         val sportString = intent.getStringExtra("SPORT")
-        val sport = try {
+        sport = try {
             SportType.valueOf(sportString ?: "")
         } catch (e: Exception) {
             SportType.BASKETBALL
         }
+
+        val header = findViewById<TextView>(R.id.txtHeader)
+
+        val sportName = when (sport) {
+            SportType.BASKETBALL -> "Basquete"
+            SportType.SOCCER -> "Futebol"
+            SportType.VOLLEYBALL -> "Vôlei"
+            SportType.BEACH_VOLLEYBALL -> "Vôlei de Praia"
+            SportType.TENNIS -> "Tênis"
+            SportType.TABLE_TENNIS -> "Tênis de Mesa"
+            SportType.RUGBY -> "Rugby"
+            SportType.CUSTOM -> "Livre"
+            else -> "Jogo"
+        }
+
+        header.text = "Partida de $sportName"
 
         teamAName = intent.getStringExtra("TIME_A")
             .takeIf { !it.isNullOrBlank() } ?: "Time A"
@@ -143,6 +163,24 @@ class ScoreActivity : AppCompatActivity() {
         container.addView(view)
     }
 
+    private fun gerarResultado(state: GameState, sport: SportType): String {
+        val scoreA = state.scores[0]
+        val scoreB = state.scores[1]
+
+        val sportName = when (sport) {
+            SportType.BASKETBALL -> "Basquete"
+            SportType.SOCCER -> "Futebol"
+            SportType.VOLLEYBALL -> "Vôlei"
+            SportType.BEACH_VOLLEYBALL -> "Vôlei de Praia"
+            SportType.TENNIS -> "Tênis"
+            SportType.TABLE_TENNIS -> "Tênis de Mesa"
+            SportType.RUGBY -> "Rugby"
+            SportType.CUSTOM -> "Livre"
+        }
+
+        return "$sportName • $teamAName $scoreA x $scoreB $teamBName"
+    }
+
     private fun checkGameEnd(state: Any) {
         val gameState = state as? GameState ?: return
         val limit = limite ?: return
@@ -157,6 +195,12 @@ class ScoreActivity : AppCompatActivity() {
 
     private fun showWinnerDialog(winnerIndex: Int) {
         val winnerName = if (winnerIndex == 0) teamAName else teamBName
+
+        val state = viewModel.state.value as? GameState
+        if (state != null) {
+            val resultado = gerarResultado(state, sport)
+            HistoryManager.saveMatch(this, resultado)
+        }
 
         AlertDialog.Builder(this)
             .setTitle("Fim de jogo")
@@ -173,6 +217,13 @@ class ScoreActivity : AppCompatActivity() {
             .setTitle("Encerrar partida")
             .setMessage("Tem certeza que deseja finalizar?")
             .setPositiveButton("Sim") { _, _ ->
+
+                val state = viewModel.state.value as? GameState
+                if (state != null) {
+                    val resultado = gerarResultado(state, sport)
+                    HistoryManager.saveMatch(this, resultado)
+                }
+
                 goToHome()
             }
             .setNegativeButton("Cancelar", null)

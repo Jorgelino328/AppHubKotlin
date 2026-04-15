@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
 import com.example.apphub.R
 import com.example.apphub.matchPointsCounter.ui.config.ConfigActivity
+import com.example.apphub.matchPointsCounter.ui.history.HistoryActivity
 
 class PickModality : AppCompatActivity() {
 
@@ -32,6 +33,11 @@ class PickModality : AppCompatActivity() {
 //        setupComingSoon(R.id.cardTenisDeMesa)
 //        setupComingSoon(R.id.cardRugby)
 //        setupComingSoon(R.id.cardLivre)
+
+        findViewById<Button>(R.id.btnHistory).setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
+        }
 
         findViewById<Button>(R.id.btnVoltar).setOnClickListener {
             finish()
