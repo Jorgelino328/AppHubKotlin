@@ -3,7 +3,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.apphub.matchPointsCounter.ui.main.MatchPointsActivity">
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_revert"
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:elevation="10dp"
+        android:contentDescription="@string/voltar"
+        app:tint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/timeA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="NotSibling" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="16dp"
-                android:text="Time A"
+                android:text="@string/time_a"
                 android:textSize="14sp"
                 android:fontFamily="sans-serif"/>
 
@@ -41,21 +59,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="+3 PONTOS" />
+                android:text="@string/_3_pontos" />
 
             <Button
                 android:id="@+id/doisPontosA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="+2 PONTOS" />
+                android:text="@string/_2_pontos" />
 
             <Button
                 android:id="@+id/tiroLivreA"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Tiro Livre" />
+                android:text="@string/tiro_livre" />
         </LinearLayout>
 
         <View
@@ -76,7 +94,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="16dp"
-                android:text="Time B"
+                android:text="@string/time_b"
                 android:textSize="14sp"
                 android:fontFamily="sans-serif"/>
 
@@ -95,21 +113,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="+3 PONTOS" />
+                android:text="@string/_3_pontos" />
 
             <Button
                 android:id="@+id/doisPontosB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="+2 PONTOS" />
+                android:text="@string/_2_pontos" />
 
             <Button
                 android:id="@+id/tiroLivreB"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Tiro Livre" />
+                android:text="@string/tiro_livre" />
         </LinearLayout>
 
     </LinearLayout>
@@ -118,7 +136,7 @@
         android:id="@+id/reiniciarPartida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Reiniciar Partida"
+        android:text="@string/reiniciar_partida"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_margin="32dp"/>

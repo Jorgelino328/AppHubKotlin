@@ -46,6 +46,9 @@ class MatchPointsActivity : AppCompatActivity() {
 
         bReiniciar.setOnClickListener { reiniciarPartida() }
 
+        findViewById<Button>(R.id.btnBack).setOnClickListener {
+            finish()
+        }
 
     }
 

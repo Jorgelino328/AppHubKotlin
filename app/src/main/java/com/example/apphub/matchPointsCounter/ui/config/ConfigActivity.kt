@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.apphub.R
 import com.example.apphub.matchPointsCounter.domain.scoring.model.SportType
@@ -22,6 +23,10 @@ class ConfigActivity : AppCompatActivity() {
         val limite = findViewById<EditText>(R.id.limitePontos)
 
         val btn = findViewById<Button>(R.id.btnIniciar)
+
+        findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            finish()
+        }
 
         btn.setOnClickListener {
 
@@ -47,6 +52,7 @@ class ConfigActivity : AppCompatActivity() {
             intent.putExtra("LIMITE", limiteValue)
 
             startActivity(intent)
+
         }
     }
 }

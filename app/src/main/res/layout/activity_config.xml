@@ -1,28 +1,52 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:paddingBottom="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="Configurações da Partida"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/white"
-        android:background="@drawable/bg_header"/>
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/configuracoes_da_partida"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:background="@drawable/bg_header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btnVoltar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_menu_revert"
+            android:elevation="10dp"
+            android:contentDescription="@string/voltar"
+            app:tint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
         android:id="@+id/timeA"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Time A"
+        android:hint="@string/nome_do_time_a"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
 
@@ -30,7 +54,7 @@
         android:id="@+id/timeB"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nome do Time B"
+        android:hint="@string/nome_do_time_b"
         android:layout_marginTop="12dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>
@@ -39,7 +63,7 @@
         android:id="@+id/limitePontos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Limite de pontos (opcional)"
+        android:hint="@string/limite_de_pontos_opcional"
         android:inputType="number"
         android:layout_marginTop="12dp"
         android:layout_marginRight="16dp"
@@ -49,7 +73,7 @@
         android:id="@+id/btnIniciar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Iniciar Partida"
+        android:text="@string/iniciar_partida"
         android:layout_marginTop="24dp"
         android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"/>

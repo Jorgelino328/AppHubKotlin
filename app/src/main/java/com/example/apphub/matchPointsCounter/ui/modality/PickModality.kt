@@ -2,6 +2,7 @@ package com.example.apphub.matchPointsCounter.ui.modality
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.LinearLayout
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -39,7 +40,7 @@ class PickModality : AppCompatActivity() {
             startActivity(intent)
         }
 
-        findViewById<Button>(R.id.btnVoltar).setOnClickListener {
+        findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
             finish()
         }
 

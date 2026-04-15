@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal"
     android:background="#121212"
     android:padding="8dp">
@@ -19,7 +20,7 @@
             android:id="@+id/timeA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time A"
+            android:text="@string/time_a"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -39,7 +40,7 @@
             android:id="@+id/btn15A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+15"
+            android:text="@string/_15_pontos"
             android:background="@drawable/bg_button_primary"
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp"/>
@@ -48,10 +49,10 @@
             android:id="@+id/btn10A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+10"
+            android:text="@string/_10_pontos"
             android:background="@drawable/bg_button_outline"
             android:textColor="@android:color/white"/>
-    </LinearLayout>
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -67,7 +68,7 @@
             android:id="@+id/timeB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time B"
+            android:text="@string/time_b"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -87,7 +88,7 @@
             android:id="@+id/btn15B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+15"
+            android:text="@string/_15_pontos"
             android:background="@drawable/bg_button_primary"
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp"/>
@@ -96,7 +97,7 @@
             android:id="@+id/btn10B"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+10"
+            android:text="@string/_10_pontos"
             android:background="@drawable/bg_button_outline"
             android:textColor="@android:color/white"/>
     </LinearLayout>

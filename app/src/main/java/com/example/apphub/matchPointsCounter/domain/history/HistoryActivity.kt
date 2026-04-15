@@ -19,9 +19,11 @@ class HistoryActivity : AppCompatActivity() {
 
         listView = findViewById(R.id.listHistory)
         val btnClear = findViewById<Button>(R.id.btnClearHistory)
-        val btnVoltar = findViewById<Button>(R.id.btnVoltarHistory)
+        val btnVoltar = findViewById<ImageButton>(R.id.btnVoltar)
 
-        btnVoltar.setOnClickListener { finish() }
+        btnVoltar.setOnClickListener {
+            finish()
+        }
 
         btnClear.setOnClickListener {
             HistoryManager.clearHistory(this)

@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -39,6 +40,10 @@ class ScoreActivity : AppCompatActivity() {
         val btnFinish = findViewById<Button>(R.id.btnFinishGame)
         btnFinish.setOnClickListener {
             showFinishDialog()
+        }
+
+        findViewById<ImageButton>(R.id.btnVoltar).setOnClickListener {
+            finish()
         }
 
         // 🔥 SPORT
@@ -206,6 +211,9 @@ class ScoreActivity : AppCompatActivity() {
             .setTitle("Fim de jogo")
             .setMessage("$winnerName venceu a partida!")
             .setCancelable(false)
+            .setNeutralButton("Voltar") { _, _ ->
+                finish()
+            }
             .setPositiveButton("Nova partida") { _, _ ->
                 goToHome()
             }

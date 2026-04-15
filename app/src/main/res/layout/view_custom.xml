@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal"
     android:background="#121212"
     android:padding="8dp">
@@ -19,7 +20,7 @@
             android:id="@+id/timeA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time A"
+            android:text="@string/time_a"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -39,7 +40,7 @@
             android:id="@+id/btnA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+1"
+            android:text="@string/_1_ponto"
             android:background="@drawable/bg_button_primary"
             android:textColor="@android:color/white"/>
     </LinearLayout>
@@ -58,7 +59,7 @@
             android:id="@+id/timeB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time B"
+            android:text="@string/time_b"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -78,9 +79,8 @@
             android:id="@+id/btnB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+1"
+            android:text="@string/_1_ponto"
             android:background="@drawable/bg_button_primary"
             android:textColor="@android:color/white"/>
     </LinearLayout>
-
 </LinearLayout>

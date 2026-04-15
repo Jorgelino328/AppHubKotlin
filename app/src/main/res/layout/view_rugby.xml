@@ -1,6 +1,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal"
     android:background="#121212"
     android:padding="8dp">
@@ -19,7 +20,7 @@
             android:id="@+id/timeA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Time A"
+            android:text="@string/time_a"
             android:textSize="16sp"
             android:textStyle="bold"
             android:textColor="#333"
@@ -39,7 +40,7 @@
             android:id="@+id/btn5A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+5"
+            android:text="@string/_5_pontos"
             android:background="@drawable/bg_button_primary"
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp"/>
@@ -48,7 +49,7 @@
             android:id="@+id/btn3A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+3"
+            android:text="@string/_3_pontos"
             android:background="@drawable/bg_button_outline"
             android:textColor="@android:color/white"
             android:layout_marginBottom="8dp"/>
@@ -57,66 +58,66 @@
             android:id="@+id/btn2A"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="+2"
+            android:text="@string/_2_pontos"
             android:background="@drawable/bg_button_text"
             android:textColor="@android:color/white"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:layout_margin="8dp"
-        android:orientation="vertical"
-        android:background="@drawable/bg_card"
-        android:padding="16dp"
-        android:gravity="center">
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_card"
+    android:padding="16dp"
+    android:gravity="center">
 
-        <TextView
-            android:id="@+id/timeB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Time B"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_marginBottom="8dp"/>
+    <TextView
+        android:id="@+id/timeB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/time_b"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#333"
+        android:layout_marginBottom="8dp"/>
 
-        <TextView
-            android:id="@+id/scoreB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textSize="64sp"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500"
-            android:layout_marginBottom="16dp"/>
+    <TextView
+        android:id="@+id/scoreB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="64sp"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:layout_marginBottom="16dp"/>
 
-        <Button
-            android:id="@+id/btn5B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+5"
-            android:background="@drawable/bg_button_primary"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="8dp"/>
+    <Button
+        android:id="@+id/btn5B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_5_pontos"
+        android:background="@drawable/bg_button_primary"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
 
-        <Button
-            android:id="@+id/btn3B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+3"
-            android:background="@drawable/bg_button_outline"
-            android:textColor="@android:color/white"
-            android:layout_marginBottom="8dp"/>
+    <Button
+        android:id="@+id/btn3B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_3_pontos"
+        android:background="@drawable/bg_button_outline"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="8dp"/>
 
-        <Button
-            android:id="@+id/btn2B"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="+2"
-            android:background="@drawable/bg_button_text"
-            android:textColor="@android:color/white"/>
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn2B"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/_2_pontos"
+        android:background="@drawable/bg_button_text"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
 
 </LinearLayout>

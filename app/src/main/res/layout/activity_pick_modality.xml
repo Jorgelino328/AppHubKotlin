@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,18 +14,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:id="@+id/textView2"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="16dp"
-            android:text="Escolha a modalidade"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="@android:color/white"
-            android:background="@drawable/bg_header"/>
+            android:layout_marginBottom="16dp">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:text="@string/escolha_a_modalidade"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@drawable/bg_header"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/btnVoltar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="8dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                android:elevation="10dp"
+                android:contentDescription="@string/voltar"
+                app:tint="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -50,13 +75,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_basketball"
-                    android:contentDescription="Basquete"/>
+                    android:contentDescription="@string/basquete"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Basquete"/>
+                    android:text="@string/basquete"/>
             </LinearLayout>
 
             <LinearLayout
@@ -77,13 +102,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_soccer"
-                    android:contentDescription="Futebol"/>
+                    android:contentDescription="@string/futebol"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Futebol"/>
+                    android:text="@string/futebol"/>
             </LinearLayout>
 
             <LinearLayout
@@ -104,13 +129,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_volley"
-                    android:contentDescription="Vôlei"/>
+                    android:contentDescription="@string/volei"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Vôlei"/>
+                    android:text="@string/volei"/>
             </LinearLayout>
 
             <LinearLayout
@@ -131,13 +156,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_beachvolley"
-                    android:contentDescription="Vôlei de areia"/>
+                    android:contentDescription="@string/volei_de_areia"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Vôlei de areia"/>
+                    android:text="@string/volei_de_areia"/>
             </LinearLayout>
 
             <LinearLayout
@@ -158,13 +183,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_tennis"
-                    android:contentDescription="Tênis"/>
+                    android:contentDescription="@string/tenis"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Tênis"/>
+                    android:text="@string/tenis"/>
             </LinearLayout>
 
             <LinearLayout
@@ -185,13 +210,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_tabletennis"
-                    android:contentDescription="Tênis de mesa"/>
+                    android:contentDescription="@string/tenis_de_mesa"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Tênis de mesa"/>
+                    android:text="@string/tenis_de_mesa"/>
             </LinearLayout>
 
             <LinearLayout
@@ -212,13 +237,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_rugby"
-                    android:contentDescription="Rugby"/>
+                    android:contentDescription="@string/rugby"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Rugby"/>
+                    android:text="@string/rugby"/>
             </LinearLayout>
 
             <LinearLayout
@@ -239,13 +264,13 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:src="@drawable/ic_free"
-                    android:contentDescription="Livre"/>
+                    android:contentDescription="@string/livre"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Livre"/>
+                    android:text="@string/livre"/>
             </LinearLayout>
 
         </GridLayout>
@@ -255,25 +280,14 @@
         android:id="@+id/btnHistory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Ver histórico"
+        android:text="@string/ver_historico"
         android:background="@drawable/bg_button_primary"
         android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:textSize="16sp"
         android:layout_marginHorizontal="16dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@id/btnVoltar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <Button
-        android:id="@+id/btnVoltar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Ir para o hub"
-        android:background="@drawable/bg_button_primary"
-        android:textColor="@android:color/white"
-        android:layout_margin="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
