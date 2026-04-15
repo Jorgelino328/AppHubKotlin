@@ -46,4 +46,5 @@
     <string name="nenhuma_partida_registrada_ainda">Nenhuma partida registrada ainda</string>
     <string name="limpar_historico">Limpar histórico</string>
     <string name="deletar_jogo">Deletar Jogo</string>
+    <string name="o_que_voc_deseja_fazer_hoje">O que você deseja fazer hoje?</string>
 </resources>

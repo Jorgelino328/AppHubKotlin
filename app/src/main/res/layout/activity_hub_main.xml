@@ -4,58 +4,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/hub_padding">
+    android:background="#F8F9FA"
+    android:padding="24dp">
 
     <TextView
         android:id="@+id/tvHubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hub_title"
-        android:textSize="@dimen/hub_title_size"
+        android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnCalculadora"
+        android:textColor="#202124"
+        app:layout_constraintBottom_toTopOf="@+id/tvHubSubtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <Button
-        android:id="@+id/btnCalculadora"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tvHubSubtitle"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/hub_button_margin"
-        android:padding="16dp"
-        android:text="@string/btn_calculadora"
-        android:textStyle="bold"
+        android:text="@string/o_que_voc_deseja_fazer_hoje"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnContador"
+        android:textColor="#5F6368"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCalculadora"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHubTitle" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCalculadora"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:text="@string/btn_calculadora"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@android:drawable/ic_menu_view"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnContador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHubSubtitle" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnContador"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/hub_button_margin"
-        android:padding="16dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
         android:text="@string/btn_contador"
         android:textStyle="bold"
         android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@android:drawable/ic_menu_sort_by_size"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
         app:layout_constraintBottom_toTopOf="@+id/btnListaCompras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCalculadora" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnListaCompras"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/hub_button_margin"
-        android:padding="16dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="16dp"
         android:text="@string/btn_lista_compras"
         android:textStyle="bold"
         android:textSize="16sp"
+        app:cornerRadius="16dp"
+        app:icon="@android:drawable/ic_menu_agenda"
+        app:iconGravity="textStart"
+        app:iconPadding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
