@@ -22,6 +22,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".shoppingList.ListHubActivity" />
         <activity android:name=".shoppingList.ShoppingListActivity" />
         <activity android:name=".calculadora.CalculadoraActivity" />
         <activity android:name=".matchPointsCounter.ui.main.MatchPointsActivity" />

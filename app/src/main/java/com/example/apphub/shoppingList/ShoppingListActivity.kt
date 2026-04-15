@@ -2,6 +2,7 @@ package com.example.apphub.shoppingList
 
 import android.os.Bundle
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,32 +12,40 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class ShoppingListActivity : AppCompatActivity() {
     private val shoppingList = mutableListOf<ShoppingItem>()
-    private lateinit var data: JsonData
+    private lateinit var jsonData: JsonData
     private lateinit var adapter: ItemAdapter
+
+    private lateinit var currentListId: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shopping_list)
 
-        data = JsonData(this)
+        currentListId = intent.getStringExtra("LIST_ID") ?: "default_list"
+        val currentListName = intent.getStringExtra("LIST_NAME") ?: "Shopping List"
 
-        shoppingList.addAll(data.loadList())
+        val textLista = findViewById<TextView>(R.id.textLista)
+        textLista.text = currentListName
+
+        jsonData = JsonData(this)
+
+        shoppingList.addAll(jsonData.loadItems(currentListId))
 
         adapter = ItemAdapter(
             itemList = shoppingList,
             onItemSaved = { position, newText ->
                 shoppingList[position].name = newText
-                data.saveList(shoppingList)
+                jsonData.saveItems(currentListId, shoppingList) // Updated
                 adapter.notifyItemChanged(position)
             },
             onItemDeleted = { position ->
                 shoppingList.removeAt(position)
-                data.saveList(shoppingList)
+                jsonData.saveItems(currentListId, shoppingList) // Updated
                 adapter.notifyItemRemoved(position)
             },
             onItemChecked = { position, isChecked ->
                 shoppingList[position].isChecked = isChecked
-                data.saveList(shoppingList)
+                jsonData.saveItems(currentListId, shoppingList) // Updated
                 adapter.notifyItemChanged(position)
             }
         )
@@ -52,7 +61,7 @@ class ShoppingListActivity : AppCompatActivity() {
             val text = inputNomeItem.text.toString()
             if (text.isNotBlank()) {
                 shoppingList.add(ShoppingItem(name = text))
-                data.saveList(shoppingList)
+                jsonData.saveItems(currentListId, shoppingList) // Updated
                 adapter.notifyItemInserted(shoppingList.size - 1)
                 inputNomeItem.text.clear()
             }

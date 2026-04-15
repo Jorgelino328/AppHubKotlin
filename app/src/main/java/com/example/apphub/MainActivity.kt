@@ -6,7 +6,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.apphub.calculadora.CalculadoraActivity
 import com.example.apphub.matchPointsCounter.ui.modality.PickModality
-import com.example.apphub.shoppingList.ShoppingListActivity
+import com.example.apphub.shoppingList.ListHubActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnListaCompras.setOnClickListener {
-            val intent = Intent(this, ShoppingListActivity::class.java)
+            val intent = Intent(this, ListHubActivity::class.java)
             startActivity(intent)
         }
     }
