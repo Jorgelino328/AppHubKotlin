@@ -3,6 +3,7 @@ package com.example.apphub.shoppingList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -10,11 +11,15 @@ import com.example.apphub.R
 
 class ItemAdapter(
     private val itemList: MutableList<String>,
+    private val onItemSaved: (Int, String) -> Unit,
     private val onItemDeleted: (Int) -> Unit
 ) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val textView: TextView = view.findViewById(R.id.textNomeItem)
+        val editTextBox: EditText = view.findViewById(R.id.editNomeItem)
+        val editButton: ImageButton = view.findViewById(R.id.btnEdit)
+        val saveButton: ImageButton = view.findViewById(R.id.btnSave)
         val deleteButton: ImageButton = view.findViewById(R.id.btnDelete)
     }
 
@@ -25,12 +30,37 @@ class ItemAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+        holder.textView.visibility = View.VISIBLE
+        holder.editButton.visibility = View.VISIBLE
+        holder.editTextBox.visibility = View.GONE
+        holder.saveButton.visibility = View.GONE
+
         val currentItem = itemList[position]
         holder.textView.text = currentItem
 
+        holder.editButton.setOnClickListener {
+            holder.textView.visibility = View.GONE
+            holder.editButton.visibility = View.GONE
+
+            holder.editTextBox.visibility = View.VISIBLE
+            holder.saveButton.visibility = View.VISIBLE
+
+            holder.editTextBox.setText(currentItem)
+            holder.editTextBox.setSelection(currentItem.length)
+            holder.editTextBox.requestFocus()
+        }
+
+        holder.saveButton.setOnClickListener {
+            val currentPosition = holder.adapterPosition
+            val newText = holder.editTextBox.text.toString()
+
+            if (currentPosition != RecyclerView.NO_POSITION && newText.isNotBlank()) {
+                onItemSaved(currentPosition, newText)
+            }
+        }
+
         holder.deleteButton.setOnClickListener {
             val currentPosition = holder.adapterPosition
-
             if (currentPosition != RecyclerView.NO_POSITION) {
                 onItemDeleted(currentPosition)
             }

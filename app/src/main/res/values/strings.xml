@@ -9,4 +9,6 @@
     <string name="nome_do_item">Nome do Item</string>
     <string name="sample_text">Sample Text</string>
     <string name="deletar_item">Deletar item</string>
+    <string name="editar_item">Editar item</string>
+    <string name="salvar_item">Salvar item</string>
 </resources>

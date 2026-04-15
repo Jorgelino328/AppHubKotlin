@@ -2,6 +2,7 @@ package com.example.apphub.shoppingList
 
 import android.os.Bundle
 import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,10 +23,18 @@ class ShoppingListActivity : AppCompatActivity() {
         val btnAdd = findViewById<FloatingActionButton>(R.id.btnAdd)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewItens)
 
-        adapter = ItemAdapter(shoppingList) { positionToDelete ->
-            shoppingList.removeAt(positionToDelete)
-            adapter.notifyItemRemoved(positionToDelete)
-        }
+        adapter = ItemAdapter(
+            itemList = shoppingList,
+            onItemSaved = { position, newText ->
+                shoppingList[position] = newText
+
+                adapter.notifyItemChanged(position)
+            },
+            onItemDeleted = { positionToDelete ->
+                shoppingList.removeAt(positionToDelete)
+                adapter.notifyItemRemoved(positionToDelete)
+            }
+        )
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
