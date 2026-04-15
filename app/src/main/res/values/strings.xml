@@ -3,4 +3,9 @@
     <string name="hub_title">Hub de Aplicativos</string>
     <string name="btn_calculadora">Calculadora Científica</string>
     <string name="btn_contador">Contador de Pontos</string>
+    <string name="btn_lista_compras">Lista de Compras</string>
+    <string name="add_a_new_item">Adicionar Novo Item</string>
+    <string name="lista_de_compras">Lista de Compras</string>
+    <string name="nome_do_item">Nome do Item</string>
+    <string name="sample_text">Sample Text</string>
 </resources>

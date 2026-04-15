@@ -38,9 +38,21 @@
         android:layout_marginTop="@dimen/hub_button_margin"
         android:padding="16dp"
         android:text="@string/btn_contador"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnListaCompras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnCalculadora" />
+
+    <Button
+        android:id="@+id/btnListaCompras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/hub_button_margin"
+        android:padding="16dp"
+        android:text="@string/btn_lista_compras"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnContador" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
