@@ -3,7 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="8dp">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="end|center_vertical"
+        android:text="0"
+        android:textSize="32sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/darker_gray"
+        android:padding="16dp"
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="32sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/guideline_display"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/btnVoltar"
@@ -16,93 +41,85 @@
         android:contentDescription="@string/voltar"
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="@+id/txtResultado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/txtResultado"
+        app:layout_constraintTop_toTopOf="@+id/txtResultado" />
 
-    <TextView
-        android:id="@+id/txtResultado"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="end"
-        android:text="0"
-        android:textSize="32sp"
-        android:textColor="@android:color/black"
-        android:background="@android:color/darker_gray"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <GridLayout
-        android:id="@+id/gridButtons"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:rowCount="7"
-        android:columnCount="4"
-        android:alignmentMode="alignMargins"
-        android:useDefaultMargins="true"
-        app:layout_constraintTop_toBottomOf="@id/txtResultado"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/guideline_display"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSin" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="sin" android:textSize="20sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCos" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="cos" android:textSize="20sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTan" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="tan" android:textSize="20sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnPower" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="^" android:textSize="20sp" app:cornerRadius="16dp"/>
+        <GridLayout
+            android:id="@+id/gridButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="7"
+            android:columnCount="4"
+            android:alignmentMode="alignMargins"
+            android:useDefaultMargins="true">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLn" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="ln" android:textSize="20sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLog" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="log" android:textSize="20sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnOpenParen" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="(" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCloseParen" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text=")" android:textSize="24sp" app:cornerRadius="16dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSin" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="sin" android:textSize="16sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCos" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="cos" android:textSize="16sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTan" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="tan" android:textSize="16sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnPower" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="^" android:textSize="18sp" app:cornerRadius="12dp"/>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnSqrt" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="√" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnClear" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="C" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnBackspace" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="⌫" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnDividir" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="÷" android:textSize="24sp" app:cornerRadius="16dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLn" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="ln" android:textSize="16sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLog" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="log" android:textSize="16sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnOpenParen" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="(" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCloseParen" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text=")" android:textSize="20sp" app:cornerRadius="12dp"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn7" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="7" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn8" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="8" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn9" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="9" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnMultiplicar" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="×" android:textSize="24sp" app:cornerRadius="16dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSqrt" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="√" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClear" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="C" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackspace" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="⌫" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDividir" style="@style/Widget.Material3.Button"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="÷" android:textSize="20sp" app:cornerRadius="12dp"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn4" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="4" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn5" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="5" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn6" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="6" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnSubtrair" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="-" android:textSize="24sp" app:cornerRadius="16dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn7" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="7" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn8" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="8" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn9" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="9" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnMultiplicar" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="×" android:textSize="20sp" app:cornerRadius="12dp"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn1" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="1" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn2" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="2" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn3" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="3" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnSomar" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="+" android:textSize="24sp" app:cornerRadius="16dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn4" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="4" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn5" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="5" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn6" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="6" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnSubtrair" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="-" android:textSize="20sp" app:cornerRadius="12dp"/>
 
-        <com.google.android.material.button.MaterialButton android:id="@+id/btn0" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="0" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnPonto" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="." android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnPi" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="π" android:textSize="24sp" app:cornerRadius="16dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/btnIgual" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="=" android:textSize="24sp" app:cornerRadius="16dp"/>
-    </GridLayout>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn1" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="1" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn2" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="2" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn3" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="3" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnSomar" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="+" android:textSize="20sp" app:cornerRadius="12dp"/>
+
+            <com.google.android.material.button.MaterialButton android:id="@+id/btn0" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="0" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnPonto" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="." android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnPi" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="π" android:textSize="20sp" app:cornerRadius="12dp"/>
+            <com.google.android.material.button.MaterialButton android:id="@+id/btnIgual" style="@style/Widget.Material3.Button" android:layout_width="0dp" android:layout_height="wrap_content" android:minHeight="48dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="=" android:textSize="20sp" app:cornerRadius="12dp"/>
+        </GridLayout>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
