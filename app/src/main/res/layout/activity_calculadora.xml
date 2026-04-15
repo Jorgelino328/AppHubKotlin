@@ -48,7 +48,16 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSin" style="@style/Widget.Material3.Button"
-            android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="sin" android:textSize="20sp" app:cornerRadius="16dp"/>
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:text="sin"
+            android:textSize="20sp"
+            app:cornerRadius="16dp"/>
+
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCos" style="@style/Widget.Material3.Button"
             android:layout_width="0dp" android:layout_height="0dp" android:layout_rowWeight="1" android:layout_columnWeight="1" android:layout_gravity="fill" android:text="cos" android:textSize="20sp" app:cornerRadius="16dp"/>
