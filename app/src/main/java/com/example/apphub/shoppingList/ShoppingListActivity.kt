@@ -22,7 +22,10 @@ class ShoppingListActivity : AppCompatActivity() {
         val btnAdd = findViewById<FloatingActionButton>(R.id.btnAdd)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewItens)
 
-        adapter = ItemAdapter(shoppingList)
+        adapter = ItemAdapter(shoppingList) { positionToDelete ->
+            shoppingList.removeAt(positionToDelete)
+            adapter.notifyItemRemoved(positionToDelete)
+        }
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
